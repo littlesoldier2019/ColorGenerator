@@ -12,64 +12,31 @@
 </head>
 <body>
     <div class="container">
-        <div class="top" id="top__color">
+        <div class="input">
             <h1>Hexadecimal Color Generator</h1>
-            <div class="input">
+            <div class="input__field">
                 <div class="input__left">
-                    <input type="text" id="color_name" value="Enter a number greater than 5">
+                    <form class="user__input">
+                        <div class="input__color">
+                            <input type="number" id="input__number" required placeholder="Enter a number greater than 5">
+                        </div>                    
+                        <div class="submit__button">
+                            <input type="submit" class="button" id="generate" value="Generate">
+                        </div>
+                    </form>
                 </div>
-                <div class="input__middle">
-                    <button class="button" id="generate">Generate</button>
-                </div>
+                                
                 <div class="input__right">
                     <button class="button" id="stop">Stop</button id="stop">
                 </div>               
             </div>
             <p>Colors change people <span>emotions</span> so put meaningful colors on your site.</p>
         </div>
-        <div class="bottom">
-            <div class="color__display">
-                <div class="button color__left">
-                    <p class="color__name">#Color</p>
-                </div>
-                <div class="color__right">
-                    <button class="button color__copy">Copy</button>
-                </div>
-           </div>
-            <div class="color__display">
-                <div class="color__left">
-                    <p class="button color__name">#Color</p>
-                </div>
-                <div class="color__right">
-                    <button class="button color__copy">Copy</button>
-                </div>
-            </div>
-             <div class="color__display">
-                <div class="color__left">
-                    <p class="color__name">#Color</p>
-                </div>
-                <div class="color__right">
-                    <button class="button color__copy">Copy</button>
-                </div>
-             </div>
-             <div class="color__display">
-                <div class="color__left">
-                    <p class="color__name">#Color</p>
-                </div>
-                <div class="color__right">
-                    <button class="button color__copy">Copy</button>
-                </div>                
-             </div>
-             <div class="color__display">
-                <div class="color__left">
-                    <p class="button color__name">#Color</p>
-                </div>
-                <div class="color__right">
-                    <button class="button color__copy">Copy</button>   
-                </div>
-            </div>
+        <div class="color__display">
+          
         </div>
         
     </div>
 </body>
 </html>
+
