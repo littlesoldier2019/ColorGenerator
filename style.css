@@ -5,7 +5,7 @@ html {
   
 body {
     font-size: 16px;
-    font-family: "Lato", "Basic", sans-serif;
+    font-family: "Lato", "Basic", 'Roboto', sans-serif;
     /* to smooth fonts */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -33,7 +33,15 @@ p {
     outline: white;
     border-radius: 3px;
     border: solid grey 1px;
-    font-family: inherit;
+    margin: 0 5px;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.button:active {
+    transform: scale(1);
 }
 
 input {
@@ -62,26 +70,19 @@ height: 100%;
     display: flex;
     justify-content: space-between;
     padding: 0 15%;
+    margin: .5rem 0;
 }
 
-.user__input {
-    display: flex;
-    justify-content: space-between;
-    margin-right: .5rem;
-}
 
 .input__left {
-    width: 90%;
+    width: 60%;
 }
 
-.input__color {
-    width: 80%;
-}
 
 .input__right {
-    width: 15%;
+    width: 40%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 #input__number {
@@ -111,7 +112,7 @@ p > span {
 
 
 .color__display-item {
-    height: 5rem;
+    height: 6rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -143,7 +144,53 @@ p > span {
 }
 
 .color__display-copy:active {
-    transform: scale(10%);
-    border: 2px solid grey;
+    transform: scale(1.1);
 }
 
+@media only screen and (max-width: 1324px) {
+    .container {
+        padding: 0 10%;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .input__field {
+        padding: 0 10%;
+    }
+    .container {
+        padding: 0 3%;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .container {
+        padding: 0 1%;
+    }
+    .input__field {
+        padding: 0 5%;
+    }
+    
+}
+
+@media only screen and (max-width: 680px) {
+    .input__field {
+        padding: 0 1%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button {
+        margin: .5rem;
+    }
+
+    .input__right {
+        display: flex;
+        justify-content: space-evenly;
+        width: 90%;
+    }
+
+    .input__left {
+        width: 100%;
+    }
+
+}

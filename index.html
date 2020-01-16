@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Basic' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <script src="main.js"></script>
 </head>
 <body>
@@ -16,18 +17,18 @@
             <h1>Hexadecimal Color Generator</h1>
             <div class="input__field">
                 <div class="input__left">
-                    <form class="user__input">
-                        <div class="input__color">
-                            <input type="number" id="input__number" required placeholder="Enter a number greater than 5">
-                        </div>                    
-                        <div class="submit__button">
-                            <input type="submit" class="button" id="generate" value="Generate">
-                        </div>
-                    </form>
+                    <div class="input__color">
+                        <input type="text" id="input__number" required placeholder="Enter a number greater than 5">
+                    </div>                      
                 </div>
                                 
                 <div class="input__right">
-                    <button class="button" id="stop">Stop</button id="stop">
+                    <div class="submit__button">
+                        <button type="submit" class="button" id="generate">Generate</button>
+                    </div>
+                    <div>
+                        <button class="button" id="stop">Stop</button>
+                    </div>
                 </div>               
             </div>
             <p>Colors change people <span>emotions</span> so put meaningful colors on your site.</p>

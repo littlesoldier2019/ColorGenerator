@@ -1,4 +1,4 @@
-window.addEventListener("load",colorGenerator); 
+window.addEventListener("load", colorGenerator); 
 
 function colorGenerator() {
 
@@ -11,9 +11,9 @@ function colorGenerator() {
         } return colorCode;
     } 
     
-    
-    
-    document.querySelector("div.input").style.backgroundColor = randomColor();
+    let colorX = randomColor()
+    document.querySelector("div.input").style.backgroundColor = colorX;
+  
     
     let colorDisplay = document.querySelector(".color__display");
     let setTimer;
@@ -25,7 +25,6 @@ function colorGenerator() {
         for (let i = 0; i < num; i++) {
             
             let color = randomColor();
-
             let block = document.createElement("div");
             block.classList.add("color__display-item");
             block.style.backgroundColor = color;
@@ -62,7 +61,7 @@ function colorGenerator() {
                 blockArr[i].querySelector("p").innerText = colorChange; 
                 blockArr[i].querySelector("button").value = colorChange;
             }     
-        }, 2000)
+        }, 1000)
     }
   
     
@@ -73,33 +72,48 @@ function colorGenerator() {
     }
 
     
+    let inputNum = document.getElementById("input__number");
     let submit = document.getElementById("generate");
+    
     submit.addEventListener("click", generateColor);
-
+    
+    
     function generateColor() {  
-        let inputNum = document.getElementById("input__number");
+        
         let num = inputNum.value;
 
-
         if (isNaN(num) || num < 5 || num > 100) {
-            alert("Enter a valid number from 5 to 100")
+            inputNum.value = "Enter a valid number from 5 to 100";
         } else {
             clearForm();
             colorBlock(num);
         }    
     }
 
-    let stop = document.getElementById("stop");
-    stop.addEventListener("click", stopTimer);
-
+    
     function stopTimer() {
         clearInterval(setTimer);
     }
 
-    let form = document.querySelector(".user__input");
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    function clearInput() {
+        inputNum.value = "";
+        inputNum.placeholder = "";
+    }
+
+    colorDisplay.addEventListener('mouseover', stopTimer);
+    colorDisplay.addEventListener('mouseout', function () {
+        setTimer = setInterval(generateColor(), 1000)
     });
+    
+    let stop = document.getElementById("stop");
+    stop.addEventListener("click", stopTimer);
+    
+
+
+    // let form = document.querySelector(".user__input");
+    // form.addEventListener('submit', (e) => {
+    //     e.preventDefault();
+    // });
     
 }
 
