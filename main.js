@@ -61,7 +61,7 @@ function colorGenerator() {
                 blockArr[i].querySelector("p").innerText = colorChange; 
                 blockArr[i].querySelector("button").value = colorChange;
             }     
-        }, 1000)
+        }, 1500)
     }
   
     
@@ -77,7 +77,6 @@ function colorGenerator() {
     
     submit.addEventListener("click", generateColor);
     
-    
     function generateColor() {  
         
         let num = inputNum.value;
@@ -87,23 +86,23 @@ function colorGenerator() {
         } else {
             clearForm();
             colorBlock(num);
+            setTimer();
         }    
     }
 
-    
     function stopTimer() {
         clearInterval(setTimer);
     }
 
-    function clearInput() {
-        inputNum.value = "";
-        inputNum.placeholder = "";
-    }
+    // function clearInput() {
+    //     inputNum.value = "";
+    //     inputNum.placeholder = "";
+    // }
 
-    colorDisplay.addEventListener('mouseover', stopTimer);
-    colorDisplay.addEventListener('mouseout', function () {
-        setTimer = setInterval(generateColor(), 1000)
-    });
+    colorDisplay.addEventListener('mouseenter', stopTimer);
+    colorDisplay.addEventListener('mouseleave', function () {   
+        setTimer = setInterval(generateColor(),1500);
+    })
     
     let stop = document.getElementById("stop");
     stop.addEventListener("click", stopTimer);
