@@ -109,6 +109,7 @@ function generateColor() {
     function clearInput() {
         inputNum.value = "";
         inputNum.placeholder = "";
+        clearForm();
     }
 
 
