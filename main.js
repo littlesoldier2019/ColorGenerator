@@ -1,6 +1,6 @@
-window.addEventListener("load", colorGenerator); 
+window.addEventListener("load", generateColor); 
 
-function colorGenerator() {
+function generateColor() {
 
     const randomColor = function () {
         let letter = '0123456789abcdef';
@@ -74,10 +74,12 @@ function colorGenerator() {
     
     let inputNum = document.getElementById("input__number");
     let submit = document.getElementById("generate");
+
     
-    submit.addEventListener("click", generateColor);
     
-    function generateColor() {  
+    submit.addEventListener("click", checkInput);
+    
+    function checkInput() {  
         
         let num = inputNum.value;
 
@@ -94,19 +96,21 @@ function colorGenerator() {
         clearInterval(setTimer);
     }
 
-    // function clearInput() {
-    //     inputNum.value = "";
-    //     inputNum.placeholder = "";
-    // }
-
+    
     colorDisplay.addEventListener('mouseenter', stopTimer);
     colorDisplay.addEventListener('mouseleave', function () {   
-        setTimer = setInterval(generateColor(),1500);
+        setTimer = setInterval(checkInput(),1500);
     })
     
     let stop = document.getElementById("stop");
     stop.addEventListener("click", stopTimer);
     
+    inputNum.addEventListener('click', clearInput);
+    function clearInput() {
+        inputNum.value = "";
+        inputNum.placeholder = "";
+    }
+
 
 
     // let form = document.querySelector(".user__input");
