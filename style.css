@@ -66,6 +66,7 @@ height: 100%;
     border: solid grey 1px;
     margin: 1rem 0;
     padding: .5rem;
+    background-color: #FCFC35 ;
 }
 
 .input__field {
@@ -94,9 +95,21 @@ height: 100%;
     border: solid grey 1px;
 }
 
-#generate, #stop {
+#generate {
     width: 6rem;
     height: 2rem;
+    background-color: #35FC5F;
+    font-weight: bold;
+    color: black;
+}
+
+
+#stop {
+    width: 6rem;
+    height: 2rem;
+    background-color: #FFC300; 
+    font-weight: bold;
+    color: black;
 }
 
 p > span {

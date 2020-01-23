@@ -11,8 +11,8 @@ function generateColor() {
         } return colorCode;
     } 
     
-    let colorX = randomColor()
-    document.querySelector("div.input").style.backgroundColor = colorX;
+    // let colorX = randomColor()
+    // document.querySelector("div.input").style.backgroundColor = colorX;
   
     
     let colorDisplay = document.querySelector(".color__display");
@@ -98,12 +98,22 @@ function generateColor() {
 
     
     colorDisplay.addEventListener('mouseenter', stopTimer);
-    colorDisplay.addEventListener('mouseleave', function () {   
-        setTimer = setInterval(checkInput(),1500);
-    })
+    colorDisplay.addEventListener('mouseleave', function () {
+        
+        if (stopClick === true) {
+        } else {
+            setTimer = setInterval(checkInput(),1500);
+        }
+
+    });
     
     let stop = document.getElementById("stop");
-    stop.addEventListener("click", stopTimer);
+    let stopClick;
+    stop.addEventListener("click", function() {
+        stopClick = true;
+        clearInterval(setTimer);
+    });
+
     
     inputNum.addEventListener('click', clearInput);
     function clearInput() {
