@@ -55,13 +55,13 @@ function generateColor() {
         }
 
         setTimer = setInterval(function () {
-            for (let i = 0; i < num; i++) {
-                let colorChange = randomColor()
-                blockArr[i].style.backgroundColor = colorChange;
-                blockArr[i].querySelector("p").innerText = colorChange; 
-                blockArr[i].querySelector("button").value = colorChange;
-            }     
-        }, 1500)
+                for (let i = 0; i < num; i++) {
+                    let colorChange = randomColor()
+                    blockArr[i].style.backgroundColor = colorChange;
+                    blockArr[i].querySelector("p").innerText = colorChange; 
+                    blockArr[i].querySelector("button").value = colorChange;
+                }     
+            }, 1500)
     }
   
     
